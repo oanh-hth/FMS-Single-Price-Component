@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/oanh-hth/FMS-Single_Price_Component
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://oanh-hth.github.io/FMS-Single_Price_Component/
 
 ## My process
 
