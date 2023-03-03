@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+:root {
+    --color-cyan: hsl(179, 62%, 43%);
+    --color-yellow: hsl(71, 73%, 54%);
+    --color-neutral-gray: hsl(204, 43%, 93%);
+    --color-neutral-blue: hsl(218, 22%, 67%);
+    --color-light-cyan: hsla(179, 62%, 43%,80%);
+    --color-white-50: hsla(0, 0%, 100%, 50%);
+    --color-white-75: hsla(0, 0%, 100%, 75%);
+    --color-white-100: hsla(0, 0%, 100%, 100%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-neutral-gray);
+    font-family: 'Karla', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-neutral-blue);
+}
+
+h1 {
+    color: var(--color-cyan);
+    font-size: calc(20px + 4 * (100vw - 375px) / 1065);
+    margin-bottom: 1em;
+}
+
+h2 {
+    color: var(--color-yellow);
+    font-size: calc(15px + 3 * (100vw - 375px) / 1065);
+    margin-bottom: 0.6875rem;
+}
+
+h3 {
+    color: var(--color-white-100);
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+.grid {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+        'one'
+        'two'
+        'three';
+    background-color: var(--color-white-100);
+    width: min(100vw - 4rem, 40rem);
+    margin-block: 4.5rem 3.875rem;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.grid-item {
+    padding: 2.5rem;
+}
+
+.intro {
+    grid-area: one;
+}
+
+.reason {
+    background-color: var(--color-light-cyan);
+    grid-area: three;
+}
+
+.cta {
+    background-color: var(--color-cyan);
+    color: var(--color-white-100);
+    grid-area: two;
+}
+
+.cta h3+p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.cta h3+p+p {
+    margin-bottom: 2rem;
+}
+
+.cta span:first-child {
+    font-weight: 700;
+    font-size: 2rem;
+    display: inline-block;
+    margin-right: 0.6875rem;
+}
+
+.cta span:nth-of-type(2) {
+    color: var(--color-white-50);
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    padding: 0.875rem 1.25rem;
+    width: 100%;
+    background-color: var(--color-yellow);
+    border-radius: 7px;
+    color: var(--color-white-100);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+button:hover, 
+button:focus {
+    outline: none;
+    transform: scale(1.1);
+    transition: transform 500ms ease;
+}
+
+li {
+    font-size: 0.875rem;
+    color: var(--color-white-75);
+    margin-bottom: 0.25rem;
+
+}
+
+@media screen and (min-width: 600px) {
+    .grid {
+        grid-template-areas: 
+            'one one'
+            'two three';
+    }
+
+}
