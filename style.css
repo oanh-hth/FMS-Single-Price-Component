@@ -134,7 +134,6 @@ button:focus {
 li {
     font-size: 0.875rem;
     color: var(--color-white-75);
-    /* margin-bottom: 0.25rem; */
     line-height: 1.25rem;
 
 }
@@ -144,6 +143,7 @@ li {
         grid-template-areas: 
             'one one'
             'two three';
+        margin-block: 0;
     }
 
 }
