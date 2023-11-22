@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;700&display=swap');
 
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
 :root {
     --color-cyan: hsl(179, 62%, 43%);
     --color-light-cyan: hsla(179, 62%, 43%, 80%);
@@ -21,10 +11,15 @@ ul {
     --color-white-100: hsla(0, 0%, 100%, 100%);
 }
 
+*, *::before, *::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
+    min-height: 100vh;
     display: grid;
     place-items: center;
-    min-height: 100vh;
     background-color: var(--color-neutral-gray);
     font-family: 'Karla', sans-serif;
     font-size: 1rem;
@@ -62,52 +57,52 @@ h2 + p {
     display: grid;
     grid-auto-columns: 1fr;
     grid-template-areas: 
-        'one'
-        'two'
-        'three';
+        'cta'
+        'subscription'
+        'why-choose-us';
     background-color: var(--color-white-100);
     width: min(100vw - 4rem, 40rem);
     margin-block: 4.5rem 3.875rem;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0px 15px 30px 0px rgba(0, 81, 171, 0.15);
 }
 
 .grid-item {
-    padding: 2.5rem;
-}
-
-.intro {
-    grid-area: one;
-}
-
-.reason {
-    background-color: var(--color-light-cyan);
-    grid-area: three;
+    padding: 1.5rem;
 }
 
 .cta {
+    grid-area: cta;
+}
+
+.why-choose-us {
+    background-color: var(--color-light-cyan);
+    grid-area: why-choose-us;
+}
+
+.subscription {
     background-color: var(--color-cyan);
     color: var(--color-white-100);
-    grid-area: two;
+    grid-area: subscription;
     display: flex;
     flex-direction: column;
 }
 
-.cta h3+p {
+.subscription h3+p {
     display: flex;
     align-items: center;
     margin-bottom: 0.25rem;
 }
 
-.cta span:first-child {
+.subscription span:first-child {
     font-weight: 700;
     font-size: 2rem;
     display: inline-block;
     margin-right: 0.6875rem;
 }
 
-.cta span:nth-of-type(2) {
+.subscription span:nth-of-type(2) {
     color: var(--color-white-50);
 }
 
@@ -118,13 +113,12 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     background-color: var(--color-yellow);
     border-radius: 0.3125rem;
     color: var(--color-white-100);
     font-weight: 700;
     font-size: 1rem;
-    margin-top: auto;
+    margin-top: 1.62rem;
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.10);
 }
 
@@ -133,6 +127,11 @@ button:focus {
     outline: none;
     transform: scale(1.1);
     transition: transform 500ms ease;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }
 
 li {
@@ -145,9 +144,17 @@ li {
 @media screen and (min-width: 600px) {
     .grid {
         grid-template-areas: 
-            'one one'
-            'two three';
+            'cta cta'
+            'subscription why-choose-us';
         margin-block: 0;
+    }
+
+    .grid-item {
+        padding: 2.5rem;
+    }
+
+    button {
+        margin-top: auto;
     }
 
 }
